@@ -20,13 +20,9 @@
         </span>
       </div>
 
-
-	  <button type="button" class="text-white bg-black rounded-md hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Login</button>
-
-      <!-- <a href="/login"
-         class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">
-        Login
-      </a> -->
+		<a href="/login" class="text-white !text-white bg-black hover:bg-brand-strong px-3 py-2 rounded-md no-underline inline-block">
+			Login
+		</a>
 
     </div>
   </div>
