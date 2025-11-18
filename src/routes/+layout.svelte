@@ -1,24 +1,25 @@
 <script>
-	import Header from './Header.svelte';
-	import './layout.css';
+  import DefaultHeader from './Header.svelte';
+  import LoginHeader from './LoginHeader.svelte';
+  import { page } from '$app/stores';
+  import './layout.css';
 
-	/** @type {{children: import('svelte').Snippet}} */
-	let { children } = $props();
+  /** @type {{children: import('svelte').Snippet}} */
+  let { children } = $props();
 </script>
 
 <div class="app">
-	<Header />
+  {#if $page.url.pathname === '/login'}
+    <LoginHeader />
+  {:else}
+    <DefaultHeader />
+  {/if}
 
-	<main>
-		{@render children()}
-	</main>
-
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
-	</footer>
+  <main>
+    {@render children()}
+  </main>
 </div>
+
 
 <style>
 	.app {
