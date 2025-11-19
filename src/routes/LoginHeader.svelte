@@ -20,9 +20,9 @@
         </span>
       </div>
 
-		<a href="/login" class="text-white !text-white bg-black hover:bg-brand-strong px-3 py-2 rounded-md no-underline inline-block">
-			Login
-		</a>
+        <a href="/" style="color: #000;" class="hover:bg-brand-strong px-3 py-2 rounded-md no-underline inline-block">
+            ⬅️ Ga terug
+        </a>
 
     </div>
   </div>
