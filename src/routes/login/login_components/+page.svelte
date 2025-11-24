@@ -1,6 +1,41 @@
 <script lang="ts">
   export let mode: "teacher" | "student" | "admin" = "student";
   export let active: boolean = false;   // for purple border
+
+   import { login } from "$lib/api";
+
+  let email = ""; // teacher or admin email 
+  let password = ""; // taeacher or admin password
+  let name = ""; //student name 
+  let code = ""; // student join code variable
+  let error = "";
+
+  /**
+   * for teacher login variables can change but for developing 
+   * i will keep it as simple as possible because i am constantly trying it 
+   */
+  async function handleTeacherLogin() {
+    try {
+      await login(email, password);
+      error = "";
+      alert("Teacher logged in!");
+    } catch (err: any) {
+      error = err.message;
+    }
+  }
+
+  /**
+   * for student login variables, it can change
+   */
+  async function handleStudentLogin() {
+    try {
+      await login(name, code); 
+      error = "";
+      alert("Student logged in!");
+    } catch (err: any) {
+      error = err.message;
+    }
+  }
 </script>
 
 <!-- Card -->
@@ -24,6 +59,7 @@
           type="email"
           placeholder="docent@school.com"
           class="mt-1 w-full px-4 py-2 bg-gray-100 rounded-md outline-none"
+          bind:value={email} 
         />
       </div>
 
@@ -33,10 +69,11 @@
           type="password"
           placeholder="••••••••"
           class="mt-1 w-full px-4 py-2 bg-gray-100 rounded-md outline-none"
+          bind:value={password}
         />
       </div>
 
-      <button class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900">
+      <button class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900" on:click={handleTeacherLogin}>
         Log in als docent
       </button>
     </div>
@@ -55,6 +92,7 @@
             type="text"
             placeholder="Vul je naam hier in"
             class="mt-1 w-full px-4 py-2 bg-gray-100 rounded-md outline-none"
+            bind:value={name}
           />
         </div>
 
@@ -64,11 +102,13 @@
             type="password"
             placeholder="ABC123"
             class="mt-1 w-full px-4 py-2 bg-gray-100 rounded-md outline-none"
+            bind:value={code}
           />
         </div>
 
         <button
           class="w-full text-white py-2 rounded-md bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500"
+          on:click={handleStudentLogin}
         >
           🚀 Let's go!
         </button>
@@ -88,6 +128,7 @@
           type="text"
           placeholder="administratie@school.com"
           class="mt-1 w-full px-4 py-2 bg-gray-100 rounded-md outline-none"
+          bind:value={email}
         />
       </div>
 
@@ -97,10 +138,11 @@
           type="password"
           placeholder="••••••••"
           class="mt-1 w-full px-4 py-2 bg-gray-100 rounded-md outline-none"
+          bind:value={password}
         />
       </div>
 
-      <button class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900">
+      <button class="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900" >
         Log in als administrator
       </button>
     </div>
