@@ -33,6 +33,12 @@
 		>
 			Aan de slag
 		</a>
+		<a
+			href="/student/design"
+			class="mt-8 inline-block rounded-md !bg-black px-8 py-3 !text-white shadow transition hover:!bg-neutral-800"
+		>
+			TEST
+		</a>
 	</div>
 </section>
 
