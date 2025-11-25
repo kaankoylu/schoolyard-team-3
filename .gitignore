@@ -42,3 +42,4 @@ pnpm-debug.log*
 
 # Optional: coverage reports
 coverage/
+*.json
