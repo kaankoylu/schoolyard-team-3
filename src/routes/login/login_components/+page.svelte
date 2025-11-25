@@ -25,7 +25,7 @@
   }
 
   /**
-   * for student login variables, it can change
+   * for student login variables, it can change.
    */
   async function handleStudentLogin() {
     try {
