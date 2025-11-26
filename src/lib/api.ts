@@ -1,36 +1,64 @@
-const API_URL = "http://localhost"; // this is the Laravel backend URL we should keep it empty
+const API_URL = "http://localhost"; // Laravel backend
 
-export async function getCsrf() {
-    // Get CSRF cookie for the Sanctum
-    await fetch(`${API_URL}/sanctum/csrf-cookie`, { credentials: "include" });
+async function getCsrf() {
+    // getting ssrf cookie
+    const res = await fetch(`${API_URL}/sanctum/csrf-cookie`, {
+        method: "GET",
+        credentials: "include", 
+    });
+    if (!res.ok) {
+        throw new Error("Failed to get CSRF cookie");
+    }
 }
 
 export async function login(email: string, password: string) {
-    await getCsrf();
+    await getCsrf(); // ensuring CSRF cookie is set
 
-    const res = await fetch(`${API_URL}/login`, {
+    const res = await fetch(`${API_URL}/login`, { 
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         credentials: "include",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
         body: JSON.stringify({ email, password }),
     });
+
     if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.message || "Login failed");
+        throw new Error(data.message || `Login failed with status ${res.status}`);
     }
+
     return res.json();
 }
 
 export async function getUser() {
     const res = await fetch(`${API_URL}/api/user`, {
+        method: "GET",
         credentials: "include",
+        headers: { "Accept": "application/json" },
     });
+
+    if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message || "Failed to fetch user");
+    }
+
     return res.json();
 }
 
 export async function logout() {
-    await fetch(`${API_URL}/logout`, {
+    await getCsrf();
+    const res = await fetch(`${API_URL}/logout`, {
         method: "POST",
         credentials: "include",
+        headers: { "Accept": "application/json" },
     });
+
+    if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message || "Logout failed");
+    }
+
+    return res.json();
 }
