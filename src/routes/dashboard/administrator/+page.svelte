@@ -2,7 +2,7 @@
     import ProfilePicture from "$lib/components/ProfilePicture.svelte";
     import RegularButton from "$lib/components/RegularButton.svelte";
 	// Example: your navigation links
-	  const x = ; // <-- guaranteed to fail build
+	
 	
 	const links = [
 		{ name: "Create Design", href: "/dashboard" },
