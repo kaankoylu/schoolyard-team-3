@@ -7,73 +7,85 @@
 	<meta name="description" content="Schoolplein ontwerper" />
 </svelte:head>
 
-<section class="min-h-[60vh] flex flex-col items-center justify-center pt-32 pb-24 text-center">
-	<h1 class="text-4xl md:text-5xl font-semibold text-blue-900">
-		Ontwerp Jouw Droomspeelplaats
-	</h1>
-
-	<p class="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
-		Een samenwerkingsplatform waar leerlingen hun ideale speelplaats kunnen ontwerpen,
-		docenten projecten kunnen beheren en beheerders overzicht houden over plattegronden
-		en beschikbare objecten.
-	</p>
-
-	<a
-		href="/login"
-		class="inline-block mt-8 px-8 py-3 rounded-md shadow transition 
-		       !bg-black hover:!bg-neutral-800 !text-white"
+<section
+	class="relative right-1/2 left-1/2 -mx-[50vw] flex
+	       min-h-[60vh] w-screen flex-col items-center
+	       justify-center bg-cover bg-center bg-no-repeat pt-32 pb-24 text-center"
+	style="background-image: url('/istockphoto-1182692791-2048x2048.jpg');"
+>
+	<div
+		class="fade-in mx-auto max-w-3xl px-4"
+		style="animation-delay: 0.1s;"
 	>
-		Aan de slag
-	</a>
+		<h1 class="text-4xl font-semibold text-blue-900 md:text-5xl">
+			Ontwerp Jouw Droomspeelplaats
+		</h1>
+
+		<p class="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+			Een samenwerkingsplatform waar leerlingen hun ideale speelplaats kunnen ontwerpen, docenten
+			projecten kunnen beheren en beheerders overzicht houden over plattegronden en beschikbare
+			objecten.
+		</p>
+
+		<a
+			href="/login"
+			class="mt-8 inline-block rounded-md !bg-black px-8 py-3 !text-white shadow transition hover:!bg-neutral-800"
+		>
+			Aan de slag
+		</a>
+	</div>
 </section>
 
-<section class="w-full py-20 bg-white">
-	<h2 class="text-center font-bold text-black mb-16" style="font-size: 35px">
+<section class="w-full bg-white py-20">
+	<h2 class="mb-16 text-center font-bold text-black" style="font-size: 35px">
 		Functionaliteiten voor Iedereen
 	</h2>
 
-	<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
+	<div class="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
+
 		<!-- Students -->
-		<div class="p-8 border rounded-xl shadow-sm hover:shadow-md transition">
-			<div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
-				<!-- Person icon (Students) -->
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<div
+			class="scroll-fade rounded-xl border p-8 shadow-sm transition hover:shadow-md"
+			style="animation-delay: 0.1s;"
+		>
+			<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
 					<path d="M20 21v-2a4 4 0 00-3-3.87"></path>
 					<path d="M4 21v-2a4 4 0 013-3.87"></path>
 					<circle cx="12" cy="7" r="4"></circle>
 				</svg>
 			</div>
-
-			<h3 class="text-xl font-semibold mb-2">Voor Leerlingen</h3>
+			<h3 class="mb-2 text-xl font-semibold">Voor Leerlingen</h3>
 			<p class="text-gray-600">
-				Ontwerp en bewerk je eigen speelplaats met gebruiksvriendelijke tools
-				en een grote selectie aan objecten om uit te kiezen.
+				Ontwerp en bewerk je eigen speelplaats met gebruiksvriendelijke tools en een grote selectie aan objecten.
 			</p>
 		</div>
 
 		<!-- Teachers -->
-		<div class="p-8 border rounded-xl shadow-sm hover:shadow-md transition">
-			<div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-4">
-				<!-- Academic cap / Book icon (Teachers) -->
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<div
+			class="scroll-fade rounded-xl border p-8 shadow-sm transition hover:shadow-md"
+			style="animation-delay: 0.3s;"
+		>
+			<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
 					<path d="M12 2l9 4-9 4-9-4 9-4z"></path>
 					<path d="M3 10v6a3 3 0 003 3h12a3 3 0 003-3v-6"></path>
 					<path d="M12 22v-8"></path>
 				</svg>
 			</div>
-
-			<h3 class="text-xl font-semibold mb-2">Voor Docenten</h3>
+			<h3 class="mb-2 text-xl font-semibold">Voor Docenten</h3>
 			<p class="text-gray-600">
-				Beheer klasprojecten, genereer toegangscodes, bekijk ontwerpen van leerlingen
-				en verzamel feedback over speelplaatsobjecten.
+				Beheer klasprojecten, genereer toegangscodes, bekijk ontwerpen van leerlingen en verzamel feedback.
 			</p>
 		</div>
 
 		<!-- Administrators -->
-		<div class="p-8 border rounded-xl shadow-sm hover:shadow-md transition">
-			<div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
-				<!-- Gear / Shield icon (Administrators) -->
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<div
+			class="scroll-fade rounded-xl border p-8 shadow-sm transition hover:shadow-md"
+			style="animation-delay: 0.5s;"
+		>
+			<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
 					<path d="M12 1v3"></path>
 					<path d="M12 20v3"></path>
 					<path d="M4.2 4.2l2.1 2.1"></path>
@@ -85,13 +97,12 @@
 					<circle cx="12" cy="12" r="3"></circle>
 				</svg>
 			</div>
-
-			<h3 class="text-xl font-semibold mb-2">Voor Beheerders</h3>
+			<h3 class="mb-2 text-xl font-semibold">Voor Beheerders</h3>
 			<p class="text-gray-600">
-				Upload schoolplattegronden, beheer beschikbare objecten en houd overzicht
-				over het gehele speelplaatsontwerpsysteem.
+				Upload schoolplattegronden, beheer objecten en houd overzicht over het gehele systeem.
 			</p>
 		</div>
+
 	</div>
 </section>
 
@@ -99,5 +110,36 @@
 	:global(body) {
 		background: linear-gradient(180deg, #eef7ff 0%, #ffffff 50%);
 		background-color: #eef7ff;
+	}
+	.fade-in {
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeUp 0.8s ease-out forwards;
+}
+
+	/* Scroll-linked fade + slide */
+	.scroll-fade {
+		opacity: 0;
+		transform: translateY(20px);
+
+		animation-name: fadeUp;
+		animation-duration: 600ms;
+		animation-timing-function: ease-out;
+		animation-fill-mode: both;
+
+		/* Tie animation to scroll position */
+		animation-timeline: view();
+		animation-range: entry 0% cover 40%;
+	}
+
+	@keyframes fadeUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 </style>
