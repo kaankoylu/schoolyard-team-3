@@ -19,7 +19,8 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+      # classic npm problem, --legacy-peer-deps fixes the version diff problem
+        run: npm install  --legacy-peer-deps 
 
       - name: Run build
         run: npm run build
