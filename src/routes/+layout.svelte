@@ -1,8 +1,9 @@
 <script>
-  import DefaultHeader from './Header.svelte';
-  import LoginHeader from './LoginHeader.svelte';
+  //import DefaultHeader from '../lib/images/Header.svelte';
+  import LoginHeader from '../lib/components/LoginHeader.svelte';
   import { page } from '$app/stores';
   import './layout.css';
+	import Header from '$lib/components/Header.svelte';
 
   /** @type {{children: import('svelte').Snippet}} */
   let { children } = $props();
@@ -12,7 +13,7 @@
   {#if $page.url.pathname === '/login'}
     <LoginHeader />
   {:else}
-    <DefaultHeader />
+    <Header />
   {/if}
 
   <main>
