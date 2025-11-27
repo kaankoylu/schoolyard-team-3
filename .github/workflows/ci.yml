@@ -20,7 +20,9 @@ jobs:
 
       - name: Install dependencies
       # classic npm problem, --legacy-peer-deps fixes the version diff problem
+      # additionally making the vitest version matching with the browser
         run: npm install  --legacy-peer-deps
+        run: npm install vitest@4.0.14 @vitest/browser@4.0.14 --save-dev
 
       - name: Install Playwright browsers
         run: npx playwright install 
