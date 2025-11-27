@@ -20,7 +20,10 @@ jobs:
 
       - name: Install dependencies
       # classic npm problem, --legacy-peer-deps fixes the version diff problem
-        run: npm install  --legacy-peer-deps 
+        run: npm install  --legacy-peer-deps
+
+      - name: Install Playwright browsers
+        run: npx playwright install 
 
       - name: Run build
         run: npm run build
