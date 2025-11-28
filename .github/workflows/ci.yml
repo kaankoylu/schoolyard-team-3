@@ -24,3 +24,15 @@ jobs:
 
       - name: Build app
         run: npm run build
+
+      - name: Notify Microsoft Teams
+        if: always()
+        run: |
+          STATUS="success"
+          if [ "${{ job.status }}" != "success" ]; then
+            STATUS="failure"
+          fi
+          MESSAGE="{\"text\": \"Frontend CI finished with *$STATUS* on branch *${{ github.ref_name }}*.\"}"
+          curl -H 'Content-Type: application/json' \
+               -d "$MESSAGE" \
+               "${{https://myhz.webhook.office.com/webhookb2/c7c8f075-876b-4d7d-b5cd-384bd1d7d9e8@4c16deb3-342d-4fca-bcd5-b1429308034c/IncomingWebhook/e0adcabd5b6f4087b13b519b1825365b/4c2dcc97-0664-43ff-bca9-453d567a3787/V24AlJO_UQxpzXvJBaFJjsPAgHR1NYNcN_suqNDj1-UE01}}"
